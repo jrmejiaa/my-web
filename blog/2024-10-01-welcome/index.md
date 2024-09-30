@@ -2,6 +2,7 @@
 slug: welcome-to-my-blog
 title: Welcome to my blog
 authors: [jrmejiaa]
+enableComments: true # for Gisqus
 tags: [facebook, hello, docusaurus]
 ---
 
