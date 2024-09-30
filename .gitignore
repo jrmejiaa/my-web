@@ -1,6 +1,9 @@
 # Dependencies
 /node_modules
 
+# VS Code folder
+.vscode/
+
 # Production
 /build
 
