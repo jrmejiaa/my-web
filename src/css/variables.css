@@ -38,6 +38,7 @@
     --ifm-footer-title-color: var(--ifm-menu-color);
 
     --ifm-global-border-width: 1px;
+    --ifm-container-width-xl: 1500px;
     --ifm-global-radius: 0.5rem;
 
     --ifm-heading-color: var(--ifm-color-emphasis-900);
