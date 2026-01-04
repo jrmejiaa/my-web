@@ -15,8 +15,8 @@ For this tutorial we will be working with the [`devtool-libmultiply`](https://gi
 
 When you load a Yocto environment, you already have the devtool binary in the path. Now we can send the first command by adding a new recipe. You can use the [`devtool-libmultiply`](https://github.com/jrmejiaa/devtool-libmultiply) repository to play with it.  
 
-```bash
-devtool add -B main libmultiply https://github.com/jrmejiaa/devtool-libmultiply.git
+```
+$ devtool add -B main libmultiply https://github.com/jrmejiaa/devtool-libmultiply.git
 ```
 
 If everything succeeded, you will have a recipe, a bbappend and the sourcetree of the project.
@@ -46,7 +46,7 @@ wworkspace/
         │       │   └── multiply
         │       │       └── multiply.hpp
         │       └── multiply.cpp
-        └── test
+        └── tests
             ├── CMakeLists.txt
             └── multiply_test.cpp
 ```
@@ -161,7 +161,7 @@ This time it builds and the basic package already includes the binary that we wa
 
 ## Creating ptest package with unit-test of project
 
-Although the last approach works perfect, this will mean that the default package will always have a *testing* binary that should only be shipped on testing images. What we can do in that case is creating a `ptest` package, which are explain on the Yocto documentation [Testing Packages With ptest](https://docs.yoctoproject.org/dev/test-manual/ptest.html#testing-packages-with-ptest). 
+Although the last approach works perfect, this will mean that the default package will always have a *testing* binary that should only be shipped on testing images. What we can do in that case is creating a `ptest` package, which are explain on the Yocto documentation [Testing Packages With ptest](https://docs.yoctoproject.org/dev/test-manual/ptest.html#testing-packages-with-ptest).
 
 The whole idea is to have a package only for testing that we can later trigger by using the testing framework of Yocto. We then need to include the bbclass `ptest` and change where we send the unittest binaries. According to the documentation, we always need a basic `run-ptest` binary that will be triggered by the `ptest-runner` inside of the machine. That `run-ptest` could be anything, on a project I created a python script inside of the `run-ptest` because the whole testing framework of the company was made with python. So basically, you can be as simple or as complex as you want in that file.
 
@@ -209,7 +209,7 @@ RDEPENDS:${PN}-ptest += "${PN}"
 
 By default the `ptest` bbclass put as `RDEPENDS` our own package (which makes total sense). However, in this case we got an error because our default package do not include anything to be installed. This is again a sanity check by the Yocto developers to avoid making 'dummy' mistakes.
 
-Once you have an image and you run for example QEMU as we do for the tutorial [How to start with Yocto without hardware](#), you should be able to run the command. 
+Once you have an image and you run for example QEMU as we do for the tutorial [How to start with Yocto without hardware with QEMU](#), you should be able to run the command. 
 
 ```bash
 # inside of QEMU environment
