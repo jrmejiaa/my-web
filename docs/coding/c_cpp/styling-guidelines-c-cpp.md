@@ -6,38 +6,7 @@ tags: [fundamentals-cxx,clang-format]
 
 I am a believer of the saying: *"The experience talk and we should listen"*. So I am not going to be the weirdo here. If you arrived to an already started project, you don't have a saying in the style and you should under all circumstances (even your own liking) maintain that style guide. The **consistency** is the most important aspect while reading code. If for the whole project you are using <kbd>tabs</kbd> instead of <kbd>spaces</kbd>, go for it. There is nothing more ugly (believe me) that seeing tabs and spaces together **in the same file** 😖. Imagine the beauty in languages like Python...
 
-Nowadays we have so many tools to avoid this kind of mistakes that even on old projects we can use new tools to avoid this kind of issues. I will present here the two tools that use for it and the configuration that I currently use in my projects when possible.
-
-## EditConfig
-
-EditorConfig is a simple configuration file format used to maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. It consists of a file named `.editorconfig` that defines basic formatting properties such as indentation style (tabs vs. spaces), indent size, character encoding, and whether to trim trailing whitespace. Unlike Clang-format, which focuses on complex code structure and syntax-aware formatting, EditorConfig handles the fundamental "text-level" settings that determine how your editor behaves when you hit the Enter or Tab keys.
-
-This file allows me to determine on a global scale not only for C/C++ files the style. For example Makefile, CMakeLists.txt or input data files like JSON or XML. This also set the UTF-8 as my encoding to avoid any type of mismatch, specially with those colleagues that still works with Windows and Notepad++ 🤪.
-
-```bash
-root = true
-
-[*]
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-indent_style = space
-indent_size = 4
-
-[*.{html,php,js}]
-indent_size = 2
-
-[*.txt]
-indent_style = tab
-indent_size = 4
-
-[Makefile]
-indent_style = tab
-
-[*.{diff,md}]
-trim_trailing_whitespace = false
-```
+Nowadays we have so many tools to avoid this kind of mistakes that even on old projects we can use new tools to avoid this kind of issues. This is the tool that I used and the settings that I preferred.
 
 ## Clang format
 
