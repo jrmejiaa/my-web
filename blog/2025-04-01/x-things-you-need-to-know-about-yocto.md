@@ -1,6 +1,6 @@
 ---
 slug: five-things-you-need-to-know-about-working-with-yocto
-title: Five things you need to know about working with yocto
+title: Five things you need to know about working with Yocto
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]

@@ -1,5 +1,5 @@
 ---
-slug: Why-you-should-use-devtool-on-yocto
+slug: why-you-should-use-devtool-on-yocto
 title: Why you should use devtool on Yocto
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
@@ -18,7 +18,7 @@ One of those things is the creation of recipes based on git repositories 'automa
 
 The `--help` of the `devtool` already give us an idea what else can be do with the tool. As you can see, there are plenty options to choose. However, I personally thing the most valuable are: `add`, `modify`, `build` and `deploy-target`.
 
-```bash
+```
 devtool --help
 NOTE: Starting bitbake server...
 usage: devtool [--basepath BASEPATH] [--bbpath BBPATH] 

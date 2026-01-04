@@ -12,7 +12,7 @@ While working on various embedded projects, I often ran into the same issue with
 
 :::info
 If you are looking for the *how* and not the *why*, look my tutorial on: \
-[How to use `pkgconfig` for your custom-libraries](/docs/linux/user-space/how-to-use-pkgconfig)
+[How to use `pkgconfig` for your custom-libraries](/docs/linux/how-to-use-pkgconfig)
 :::
 
 Let's start with an example of a library `foo`. This library is a C++ code that wants to be used in several places. This will not only handle internal process communication throughout `zmq`, but also it used a custom-logging library `foo-log` and another common library called `foo-common`. This maybe a huge library, but it is perfect as an example. If we make a search in the ELF file, we find out what we talked about, we have some standard library dependencies (not an issue) and our custom libraries.
