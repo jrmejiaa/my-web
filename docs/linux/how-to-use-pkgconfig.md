@@ -104,4 +104,6 @@ FOO_UTILS_CFLAGS=$(shell pkg-config --cflags foo-utils)
 $(CC) -MMD -Wall $(LIBS) $(FOO_UTILS_LFLAFS) $(FOO_UTILS_CFLAGS) $^ -o awesome-app
 ```
 
+---
+
 I hope this tutorial was helpful and you see the benefit of using this approach in your own custom-libraries. While working with Yocto, I also found out that this was the best way of dealing with this kind of dependencies, at least that I could find out in the Internet wild. Do you know a better way to handle libraries? Let's discuss in the comments!

@@ -5,7 +5,7 @@ tags: [yocto, fundamentals-python, setuptools]
 
 # How to create a basic python module
 
-Nowadays on times of python `3.14.X` there are a tone of ways to create a python module. This is kind of the "old" way. You will be find python purist that say why this is no longer recommended, but I decide to document this version here because it is the current way of installing modules that works out-of-the-box with Yocto and with legacy tools. Besides that the blog post [*Is `setup.py` deprecated?](https://packaging.python.org/en/latest/discussions/setup-py-deprecated/) shows why this is still relevant and could be used to follow the latest trends.
+Nowadays on times of python `3.14.X` there are a tone of ways to create a python module. This is kind of the "old" way. You will be find python purist that say why this is no longer recommended, but I decide to document this version here because it is the current way of installing modules that works out-of-the-box with Yocto and with legacy tools. Besides the blog post [*Is `setup.py` deprecated?*](https://packaging.python.org/en/latest/discussions/setup-py-deprecated/) shows why this is still relevant and how it could be used to follow the latest trends.
 
 
 ```bash
