@@ -1,23 +1,220 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-    padding: 4rem 0;
+/* ── About Blurb ─────────────────────────────────────────────── */
+.aboutSection {
+    padding: 5rem 1.5rem;
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    background: var(--ifm-background-color);
 }
 
+.aboutInner {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.sectionLabel {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ifm-color-primary);
+    margin-bottom: 1rem;
+}
+
+.aboutText {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--ifm-color-content);
+}
+
+.aboutLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.aboutLink:hover {
+    color: var(--ifm-color-primary-light);
+    text-decoration: underline;
+}
+
+/* ── Featured Posts ──────────────────────────────────────────── */
+.postsSection {
+    padding: 5rem 1.5rem;
+    background: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .postsSection {
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.postsInner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-family: var(--ifm-heading-font-family);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--ifm-heading-color);
+}
+
+.postsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.postCard {
+    border: 1px solid var(--ifm-hr-border-color);
+    border-radius: var(--ifm-global-radius);
+    padding: 1.5rem;
+    background: var(--ifm-card-background-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.postCard:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+    text-decoration: none;
+}
+
+.postTitle {
+    font-family: var(--ifm-heading-font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.postCard:hover .postTitle {
+    color: var(--ifm-color-primary);
+}
+
+.postSummary {
+    font-size: 0.875rem;
+    color: var(--ifm-color-content);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+}
+
+.postTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--ifm-color-primary);
+    letter-spacing: 0.02em;
+}
+
+.viewAll {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+}
+
+.viewAll:hover {
+    text-decoration: underline;
+    color: var(--ifm-color-primary-light);
+}
+
+/* ── Skills Grid ─────────────────────────────────────────────── */
+.skillsSection {
+    padding: 5rem 1.5rem;
+    background: var(--ifm-background-color);
+}
+
+.skillsInner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.skillGroup {
+    border: 1px solid var(--ifm-hr-border-color);
+    border-radius: var(--ifm-global-radius);
+    padding: 1.5rem;
+    background: var(--ifm-card-background-color);
+}
+
+.skillGroupTitle {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ifm-color-primary);
+    margin-bottom: 1rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chip {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: var(--ifm-color-emphasis-200);
+    color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .chip {
+    background: rgba(226, 232, 240, 0.08);
+    color: var(--ifm-color-gray-400);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
 @media screen and (max-width: 996px) {
-    .heroBanner {
-        padding: 2rem;
+    .postsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media screen and (max-width: 576px) {
+
+    .aboutSection,
+    .postsSection,
+    .skillsSection {
+        padding: 3rem 1rem;
+    }
+
+    .aboutText {
+        font-size: 1.05rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
 }
