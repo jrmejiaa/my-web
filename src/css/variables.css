@@ -1,157 +1,160 @@
+/* ── Blue / Dark-Blue Palette ─────────────────────────────────── */
 :root {
-    --ifm-color-primary: #2277df;
-    --ifm-color-primary-dark: #1d5faf;
-    --ifm-color-primary-darker: #184c8b;
-    --ifm-color-primary-darkest: #0f335f;
-    --ifm-color-primary-light: #21e9dd;
-    --ifm-color-primary-lighter: #4aede3;
-    --ifm-color-primary-lightest: #72f1e9;
+    /* Primary blue scale */
+    --ifm-color-primary: #3b82f6;
+    --ifm-color-primary-dark: #2563eb;
+    --ifm-color-primary-darker: #1d4ed8;
+    --ifm-color-primary-darkest: #1e3a8a;
+    --ifm-color-primary-light: #60a5fa;
+    --ifm-color-primary-lighter: #93bbfd;
+    --ifm-color-primary-lightest: #dbeafe;
 
-    --ifm-color-gray-0: hsl(220, 100%, 100%);
-    --ifm-color-gray-100: hsl(220, 65%, 98%);
-    --ifm-color-gray-200: hsl(220, 60%, 94%);
-    --ifm-color-gray-300: hsl(220, 55%, 90%);
-    --ifm-color-gray-400: hsl(220, 35%, 75%);
-    --ifm-color-gray-500: hsl(220, 25%, 65%);
-    --ifm-color-gray-600: hsl(220, 15%, 50%);
-    --ifm-color-gray-700: hsl(220, 25%, 35%);
-    --ifm-color-gray-800: hsl(220, 35%, 25%);
-    --ifm-color-gray-900: hsl(220, 55%, 15%);
-    --ifm-color-gray-1000: hsl(220, 60%, 10%);
+    /* Neutral scale — blue-tinted grays */
+    --ifm-color-gray-0: #ffffff;
+    --ifm-color-gray-100: #f1f5f9;
+    --ifm-color-gray-200: #e2e8f0;
+    --ifm-color-gray-300: #cbd5e1;
+    --ifm-color-gray-400: #94a3b8;
+    --ifm-color-gray-500: #64748b;
+    --ifm-color-gray-600: #475569;
+    --ifm-color-gray-700: #334155;
+    --ifm-color-gray-800: #1e293b;
+    --ifm-color-gray-900: #0f172a;
+    --ifm-color-gray-1000: #020617;
 
-    --ifm-background-color: var(--ifm-color-emphasis-0);
-    --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+    /* Surfaces */
+    --ifm-background-color: var(--ifm-color-gray-0);
+    --ifm-background-surface-color: var(--ifm-color-gray-0);
+    --ifm-card-background-color: var(--ifm-color-gray-0);
 
-    --ifm-card-background-color: var(--ifm-color-emphasis-0);
+    /* Content */
+    --ifm-color-content: var(--ifm-color-gray-700);
+    --ifm-color-content-inverse: var(--ifm-color-gray-0);
+    --ifm-dropdown-link-color: var(--ifm-color-gray-700);
 
-    --ifm-color-content: var(--ifm-color-emphasis-700);
-    --ifm-color-content-inverse: var(--ifm-color-emphasis-0);
+    /* Typography */
+    --ifm-font-family-base: 'Source Sans 3', system-ui, sans-serif;
+    --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+    --ifm-heading-font-family: 'JetBrains Mono', monospace;
+    --ifm-heading-font-weight: 700;
+    --ifm-font-size-base: 112%;
+    --ifm-line-height-base: 1.75;
 
-    --ifm-dropdown-link-color: var(--ifm-color-emphasis-700);
-
-    --ifm-font-family-base: Inter, sans-serif;
-
+    /* Footer */
     --ifm-footer-background-color: var(--ifm-color-gray-900);
     --ifm-footer-color: var(--ifm-color-gray-300);
     --ifm-footer-link-color: var(--ifm-color-gray-300);
-    --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
-    --ifm-footer-title-color: var(--ifm-menu-color);
+    --ifm-footer-link-hover-color: var(--ifm-color-primary-light);
+    --ifm-footer-title-color: var(--ifm-color-gray-0);
 
+    /* Layout */
     --ifm-global-border-width: 1px;
     --ifm-container-width-xl: 1500px;
     --ifm-global-radius: 0.5rem;
 
-    --ifm-heading-color: var(--ifm-color-emphasis-900);
-    --ifm-heading-font-family: "Metropolis Semi Bold", sans-serif;
-    --ifm-heading-font-weight: var(--ifm-font-weight-normal);
+    /* Headings */
+    --ifm-heading-color: var(--ifm-color-gray-900);
 
-    --ifm-hero-background-color: var(--ifm-color-emphasis-100);
+    /* Hero */
+    --ifm-hero-background-color: var(--ifm-color-gray-100);
 
-    --ifm-hover-overlay: var(--ifm-color-emphasis-100);
+    /* Hover */
+    --ifm-hover-overlay: var(--ifm-color-gray-100);
 
-    --ifm-hr-border-color: var(--ifm-color-emphasis-200);
+    /* Dividers */
+    --ifm-hr-border-color: var(--ifm-color-gray-200);
     --ifm-hr-border-width: var(--ifm-global-border-width);
 
+    /* Links */
     --ifm-link-hover-decoration: underline;
 
-    --ifm-menu-color: var(--ifm-color-emphasis-600);
-    --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+    /* Sidebar / Menu */
+    --ifm-menu-color: var(--ifm-color-gray-600);
+    --ifm-menu-color-active: var(--ifm-color-primary);
 
-    --ifm-navbar-item-padding-horizontal: 1.5rem;
-    --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
-    --ifm-navbar-link-hover-color: var(--ifm-menu-color-active);
+    /* Navbar */
+    --ifm-navbar-item-padding-horizontal: 1.25rem;
+    --ifm-navbar-link-color: var(--ifm-color-gray-600);
+    --ifm-navbar-link-hover-color: var(--ifm-color-primary);
     --ifm-navbar-padding-horizontal: 1.5rem;
     --ifm-navbar-shadow: none;
 
+    /* Scrollbar */
     --ifm-scrollbar-track-background-color: transparent;
-    --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
-    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+    --ifm-scrollbar-thumb-background-color: var(--ifm-color-gray-300);
+    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-gray-400);
 
-    --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+    /* TOC */
+    --ifm-toc-border-color: var(--ifm-color-gray-200);
     --ifm-toc-link-color: var(--ifm-menu-color);
     --ifm-toc-padding-vertical: 0.25rem;
     --ifm-toc-padding-horizontal: 1rem;
 
-    --site-color-favorite-background: var(--ifm-color-emphasis-100);
-    --site-color-tooltip: #fff;
-    --site-color-tooltip-background: #353738;
-    --site-color-svg-icon-favorite: #e9669e;
-    --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
+    /* Custom tokens */
+    --site-color-accent: #06b6d4;
+    --site-terminal-bg: #0c1222;
+    --site-terminal-border: #1e3a5f;
+    --site-terminal-green: #4ade80;
+    --site-terminal-blue: #60a5fa;
+    --site-terminal-cyan: #22d3ee;
+    --site-terminal-dim: #64748b;
 }
 
+/* ── Dark mode overrides ─────────────────────────────────────── */
 :root[data-theme="dark"] {
-    --ifm-color-content: var(--ifm-color-emphasis-900);
-    --ifm-color-content-inverse: var(--ifm-color-emphasis-900);
+    --ifm-background-color: #0b1120;
+    --ifm-background-surface-color: #0f172a;
+    --ifm-card-background-color: #131c31;
 
-    --ifm-background-color: var(--ifm-color-emphasis-0);
-    --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+    --ifm-color-content: var(--ifm-color-gray-200);
+    --ifm-color-content-inverse: var(--ifm-color-gray-900);
 
-    --ifm-card-background-color: var(--ifm-color-emphasis-100);
+    --ifm-heading-color: var(--ifm-color-gray-200);
 
-    --ifm-hero-background-color: var(--ifm-color-emphasis-0);
+    --ifm-hero-background-color: #0b1120;
 
-    --ifm-hover-overlay: var(--ifm-color-emphasis-100);
+    --ifm-hover-overlay: rgba(59, 130, 246, 0.08);
 
-    --ifm-scrollbar-track-background-color: transparent;
-    --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
-    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+    --ifm-hr-border-color: var(--ifm-color-gray-700);
+
+    --ifm-menu-color: var(--ifm-color-gray-400);
+    --ifm-menu-color-active: var(--ifm-color-primary-light);
+
+    --ifm-navbar-link-color: var(--ifm-color-gray-300);
+    --ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
+
+    --ifm-dropdown-link-color: var(--ifm-color-gray-200);
+
+    --ifm-toc-border-color: var(--ifm-color-gray-700);
+
+    --ifm-scrollbar-thumb-background-color: var(--ifm-color-gray-600);
+    --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-gray-500);
 }
 
+/* ── DocSearch ───────────────────────────────────────────────── */
 :root .DocSearch {
-    --docsearch-primary-color: var(--ifm-color-content);
+    --docsearch-primary-color: var(--ifm-color-primary);
     --docsearch-text-color: var(--ifm-color-content);
     --docsearch-spacing: 1.2rem;
     --docsearch-icon-stroke-width: 1.5px;
     --docsearch-highlight-color: var(--ifm-color-primary);
-    --docsearch-muted-color: var(--ifm-color-emphasis-400);
+    --docsearch-muted-color: var(--ifm-color-gray-400);
     --docsearch-container-background: rgba(0, 0, 0, 0.6);
-    --docsearch-logo-color: var(--docsearch-primary-color);
-
-    /* modal */
     --docsearch-modal-width: 70vw;
     --docsearch-modal-height: 80vh;
     --docsearch-modal-background: var(--ifm-background-surface-color);
     --docsearch-modal-shadow: none;
-
-    /* searchbox */
     --docsearch-searchbox-height: 3rem;
     --docsearch-searchbox-background: transparent;
     --docsearch-searchbox-focus-background: transparent;
     --docsearch-searchbox-shadow: none;
-
-    /* hit */
-    --docsearch-hit-color: var(--ifm-menu-color-active);
-    --docsearch-hit-active-color: var(--ifm-menu-color-active);
+    --docsearch-hit-color: var(--ifm-color-content);
+    --docsearch-hit-active-color: var(--ifm-color-content);
     --docsearch-hit-background: none;
     --docsearch-hit-shadow: none;
-
-    /* key */
     --docsearch-key-gradient: none;
     --docsearch-key-shadow: none;
-
-    /* footer */
     --docsearch-footer-height: 2rem;
     --docsearch-footer-background: none;
     --docsearch-footer-shadow: none;
-}
-
-/* Darkmode */
-
-html[data-theme="dark"] .DocSearch {
-    --docsearch-text-color: var(--ifm-color-content);
-    --docsearch-container-background: rgba(0, 0, 0, 0.6);
-    --docsearch-modal-background: var(--ifm-background-surface-color);
-    --docsearch-modal-shadow: none;
-
-    --docsearch-searchbox-background: transparent;
-    --docsearch-searchbox-focus-background: transparent;
-    --docsearch-hit-color: var(--ifm-menu-color-active);
-    --docsearch-hit-shadow: none;
-    --docsearch-hit-background: none;
-    --docsearch-key-gradient: none;
-    --docsearch-key-shadow: none;
-    --docsearch-footer-background: none;
-    --docsearch-footer-shadow: none;
-    --docsearch-logo-color: var(--docsearch-muted-color);
-    --docsearch-muted-color: var(--ifm-color-emphasis-400);
 }

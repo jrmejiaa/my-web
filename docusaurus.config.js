@@ -1,40 +1,26 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Embedded Systems forge',
-  tagline: 'Embedded systems are cool', // TODO just test something
+  title: 'Oops I bug it again · J. Mejia',
+  tagline: 'Embedded Software Engineer — Yocto · Linux · C/C++',
   favicon: '/img/blog_favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'jrmejiaa',
+  projectName: 'my-web',
 
   onBrokenLinks: 'throw',
 
-  // Markdown settings
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
-    }
+    },
   },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -47,18 +33,16 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          blogTitle: 'Oops I bug it again',
+          blogDescription: 'Notes on Linux, Yocto, and embedded development — by Jairo R. Mejia Aponte',
+          feedOptions: {
+            type: 'rss',
+            copyright: `© ${new Date().getFullYear()} Jairo R. Mejia Aponte`,
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -70,48 +54,92 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: true,
+      },
       navbar: {
-        title: 'My Site',
+        title: 'Oops I bug it again · J. Mejia',
         hideOnScroll: true,
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Jairo Mejia Logo',
+          src: 'img/icon.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'codingSidebar',
-            position: 'left',
-            label: 'Coding',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'yoctoSidebar',
-            position: 'left',
-            label: 'Yocto and OpenEmbedded',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'linuxSidebar',
-            position: 'left',
-            label: 'Linux',
-          },
+          { to: '/', label: 'Home', position: 'left', activeBaseRegex: '^/$' },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
+            type: 'dropdown',
+            label: 'Docs',
+            position: 'left',
+            items: [
+              {
+                type: 'docSidebar',
+                sidebarId: 'yoctoSidebar',
+                label: 'Yocto',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'codingSidebar',
+                label: 'Programming',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'linuxSidebar',
+                label: 'Linux',
+              },
+            ],
+          },
+          { to: '/about', label: 'About', position: 'left' },
+          {
             href: 'https://github.com/jrmejiaa',
-            label: "Github",
-            position: "right"
-          }
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub profile',
+          },
         ],
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Jairo R. Mejia Aponte. Built with Docusaurus.`,
+        links: [
+          {
+            title: 'Site',
+            items: [
+              { label: 'Home', to: '/' },
+              { label: 'Blog', to: '/blog' },
+              { label: 'Docs', to: '/docs/yocto/welcome' },
+            ],
+          },
+          {
+            title: 'Connect',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/jrmejiaa',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://linkedin.com/in/jrmejiaa',
+              },
+              {
+                label: 'Email',
+                href: 'mailto:jrmejiaa@gmail.com',
+              },
+            ],
+          },
+          {
+            title: 'Meta',
+            items: [
+              { label: 'RSS Feed', href: 'pathname:///blog/rss.xml' },
+            ],
+          },
+        ],
+        copyright: `© ${new Date().getFullYear()} Jairo R. Mejia Aponte. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['cpp', 'c', 'bash', 'php', 'yaml', 'makefile']
+        additionalLanguages: ['cpp', 'c', 'bash', 'php', 'yaml', 'makefile'],
       },
     }),
 };
