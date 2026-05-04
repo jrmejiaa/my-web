@@ -36,7 +36,7 @@ add_executable(app-foo ${MY_SOURCES})
 target_link_libraries(app-foo foo foo-common foo-log)
 ```
 
-Since our custom `foo` library uses the other two libraries, every time that we want to create an application, we need to add those extra library flags. The problem arises when w upgrade the `foo` library. Maybe, we found out that we need to secure some user input and we require some encryption algorithms. So now the library requires also `libcrypto.so`. This will immediately breaks all build scripts. Our project will no longer build and we have to do maintaining work on those build scripts. To avoid this technical debt (at least one, right?), we use a very old but reliable tool `pkgconfig`.
+Since our custom `foo` library uses the other two libraries, every time that we want to create an application, we need to add those extra library flags. The problem arises when we upgrade the `foo` library. Maybe, we found out that we need to secure some user input and we require some encryption algorithms. So now the library requires also `libcrypto.so`. This will immediately breaks all build scripts. Our project will no longer build and we have to do maintaining work on those build scripts. To avoid this technical debt (at least one, right?), we use a very old but reliable tool `pkgconfig`.
 
 The whole idea behind `pkgconfig` is that the maintainer of the library is in charged of updating the require compiler and linker flags to avoid this situation that I mentioned before. Using `pkgconfig` in this case, we now just ask for the package of the custom-library and it is the same library that tell us, which libraries we required to build our application without problem.
 

@@ -35,7 +35,7 @@ I was a happy `vim` user, I had a few plugins, a basic theme and I thought that 
 
 When I like something I keep using it until I find something better, I have used a lot of different themes for my NVIM and VS Code. However there was one for me that it is just perfect and that's **Tokyo Night**. This theme is well known when you search for themes, it is very popular and it exists in a range of different editors and IDEs and that's make it perfect for me, because there is a version for VSCode and NVIM. I came across with it and since then I never look back. I love how it looks. I forked the original extension in VSCode to make it more perfect for C++ and some changes for YANG. If you are interested, let me know 😎. 
 
-I don't use icons on NVIM, I like to maintain it as clean as possible, but for VSCode I have tested a lot and I just love my last finding *Bearded Icons*. Sadly the project seems abandon because I made a PR and the creator has not responded, but for me, it is the best icon theme on VSCode.
+I don't use icons on NVIM, I like to maintain it as clean as possible, but for VSCode I have tested a lot and I just love my last finding *Bearded Icons*.
 
 ## Terminal essentials
 
