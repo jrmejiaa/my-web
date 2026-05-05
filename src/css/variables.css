@@ -37,7 +37,8 @@
     --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
     --ifm-heading-font-family: 'JetBrains Mono', monospace;
     --ifm-heading-font-weight: 700;
-    --ifm-font-size-base: 112%;
+    --ifm-font-size-base: 100%;
+    --ifm-code-font-size: 80%;
     --ifm-line-height-base: 1.75;
 
     /* Footer */
@@ -49,7 +50,9 @@
 
     /* Layout */
     --ifm-global-border-width: 1px;
-    --ifm-container-width-xl: 1500px;
+    --ifm-container-width-xl: 1400px;
+    --ifm-container-width-l: 1200px;
+    --ifm-container-width-m: 1000px;
     --ifm-global-radius: 0.5rem;
 
     /* Headings */
@@ -129,6 +132,13 @@
 
     --ifm-scrollbar-thumb-background-color: var(--ifm-color-gray-600);
     --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-gray-500);
+}
+
+/* ── Desktop typography scale ─────────────────────────────────── */
+@media (min-width: 997px) {
+    :root {
+        --ifm-font-size-base: 112%;
+    }
 }
 
 /* ── DocSearch ───────────────────────────────────────────────── */
