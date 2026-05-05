@@ -1,102 +1,89 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './TerminalHero.module.css';
 
-const LINES = [
-  { prompt: '$ whoami', output: 'Jairo R. Mejia Aponte — Embedded Software Engineer' },
-  { prompt: '$ cat /etc/specialization', output: 'Yocto Project | C/C++ | Linux Kernel & Userspace | C/C++ | Python | Bash' },
-  { prompt: '$ uptime', output: '4+ years building embedded Linux systems' },
+const COMMAND = '$ bitbake core-image-custom';
+const OUTPUT_LINES = [
+  { text: 'Loading cache: 100% |████████████████| ETA: 00:00:00', style: 'dim' },
+  { text: 'Parsing recipes: 2,847 of 2,847', style: 'dim' },
+  { text: 'Build Configuration:', style: 'default' },
+  { text: '  MACHINE = "custom-arm64"', style: 'highlight' },
+  { text: '  DISTRO  = "poky-custom"', style: 'highlight' },
+  { text: 'NOTE: Tasks: 4,218 (3,912 cached)', style: 'note' },
+  { text: 'NOTE: Build completed successfully.', style: 'note' },
 ];
 
 const CHAR_DELAY = 35;
-const LINE_PAUSE = 400;
-const OUTPUT_PAUSE = 200;
+const LINE_DELAY = 300;
+const OUTPUT_PAUSE = 400;
 
 export default function TerminalHero() {
-  const [displayed, setDisplayed] = useState([]);
+  const [typedCmd, setTypedCmd] = useState('');
+  const [visibleLines, setVisibleLines] = useState(0);
+  const [done, setDone] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
   const animationRan = useRef(false);
 
   useEffect(() => {
     if (animationRan.current) return;
     animationRan.current = true;
-
     let cancelled = false;
-
-    async function sleep(ms) {
-      return new Promise((r) => setTimeout(r, ms));
-    }
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     async function animate() {
-      for (let i = 0; i < LINES.length; i++) {
+      // Type command character by character
+      for (let i = 1; i <= COMMAND.length; i++) {
         if (cancelled) return;
-        const { prompt, output } = LINES[i];
-
-        // Type prompt character by character
-        for (let c = 1; c <= prompt.length; c++) {
-          if (cancelled) return;
-          setDisplayed((prev) => {
-            const next = [...prev];
-            next[i] = { prompt: prompt.slice(0, c), output: '' };
-            return next;
-          });
-          await sleep(CHAR_DELAY);
-        }
-
-        await sleep(OUTPUT_PAUSE);
-
-        // Show output instantly
-        if (cancelled) return;
-        setDisplayed((prev) => {
-          const next = [...prev];
-          next[i] = { prompt, output };
-          return next;
-        });
-
-        if (i < LINES.length - 1) await sleep(LINE_PAUSE);
+        setTypedCmd(COMMAND.slice(0, i));
+        await sleep(CHAR_DELAY);
       }
+      await sleep(OUTPUT_PAUSE);
+      // Reveal output lines one by one
+      for (let i = 1; i <= OUTPUT_LINES.length; i++) {
+        if (cancelled) return;
+        setVisibleLines(i);
+        await sleep(LINE_DELAY);
+      }
+      if (!cancelled) setDone(true);
     }
 
     animate();
     return () => { cancelled = true; };
   }, []);
 
-  // Blinking cursor
   useEffect(() => {
     const id = setInterval(() => setCursorVisible((v) => !v), 530);
     return () => clearInterval(id);
   }, []);
 
+  const cursorClass = `${styles.cursor} ${cursorVisible ? '' : styles.cursorHidden}`;
+
   return (
-    <section className={styles.heroSection}>
-      <div className={styles.terminal}>
-        <div className={styles.titleBar}>
-          <span className={styles.dot} data-color="red" />
-          <span className={styles.dot} data-color="yellow" />
-          <span className={styles.dot} data-color="green" />
-          <span className={styles.titleText}>jairo@embedded-device:~</span>
-        </div>
-        <div className={styles.body}>
-          {displayed.map((line, i) => (
-            <div key={i} className={styles.lineGroup}>
-              <div className={styles.promptLine}>
-                <span className={styles.prompt}>{line.prompt}</span>
-                {i === displayed.length - 1 && !line.output && (
-                  <span className={`${styles.cursor} ${cursorVisible ? '' : styles.cursorHidden}`}>▌</span>
-                )}
-              </div>
-              {line.output && (
-                <div className={styles.output}>{line.output}</div>
-              )}
-            </div>
-          ))}
-          {displayed.length === LINES.length && displayed[LINES.length - 1]?.output && (
-            <div className={styles.promptLine}>
-              <span className={styles.prompt}>$ </span>
-              <span className={`${styles.cursor} ${cursorVisible ? '' : styles.cursorHidden}`}>▌</span>
-            </div>
+    <div className={styles.terminal}>
+      <div className={styles.titleBar}>
+        <span className={styles.dot} data-color="red" />
+        <span className={styles.dot} data-color="yellow" />
+        <span className={styles.dot} data-color="green" />
+        <span className={styles.titleText}>~/yocto/build</span>
+      </div>
+      <div className={styles.body}>
+        <div className={styles.promptLine}>
+          <span className={styles.prompt}>{typedCmd}</span>
+          {!done && visibleLines === 0 && (
+            <span className={cursorClass}>▊</span>
           )}
         </div>
+        {OUTPUT_LINES.slice(0, visibleLines).map((line, i) => (
+          <div key={i} className={styles[`line_${line.style}`]}>
+            {line.text}
+          </div>
+        ))}
+        {done && (
+          <div className={styles.promptLine}>
+            <span className={styles.prompt}>$ </span>
+            <span className={cursorClass}>▊</span>
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 }

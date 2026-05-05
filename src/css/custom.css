@@ -13,6 +13,12 @@ html {
     font-size: 2.3rem !important;
 }
 
+@media (max-width: 576px) {
+    .title_f1Hy {
+        font-size: 2rem !important;
+    }
+}
+
 .navbar {
     border-bottom: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
 }
@@ -28,17 +34,17 @@ html {
     margin-right: 0;
 }
 
+.navbar__title::after {
+    content: 'J. Mejia';
+    font-size: 0.9rem;
+    color: var(--ifm-navbar-link-color);
+}
+
 @media screen and (min-width: 997px) {
     .navbar__title {
         padding-right: var(--ifm-navbar-item-padding-horizontal);
         border-right: 1px solid var(--ifm-color-emphasis-200);
     }
-}
-
-.navbar__title::after {
-    content: 'J. Mejia';
-    font-size: 0.9rem;
-    color: var(--ifm-navbar-link-color);
 }
 
 @media screen and (min-width: 769px) {
@@ -114,4 +120,23 @@ html {
 
 .margin-bottom--xl {
     margin-bottom: 2.5rem !important;
+}
+
+/* Sidebar logo — match navbar title font */
+[class*="sidebarLogo"] {
+    margin: 0 0 0 var(--ifm-navbar-padding-horizontal) !important;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9rem;
+
+}
+
+@media screen and (min-width: 997px) {
+    [class*="sidebarLogo"][class*="sidebarLogo"] {
+        color: var(--ifm-navbar-link-color) !important;
+    }
+}
+
+/* Sidebar width — align with navbar brand divider */
+:root {
+    --doc-sidebar-width: calc(var(--ifm-navbar-padding-horizontal) + 358.156px) !important;
 }

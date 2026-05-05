@@ -1,43 +1,118 @@
-/* ── About Blurb ─────────────────────────────────────────────── */
-.aboutSection {
-    padding: 5rem 1.5rem;
-    text-align: center;
-    background: var(--ifm-background-color);
+/* ── Hero — split layout ──────────────────────────────────────── */
+.heroSection {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 1.5rem 4rem;
+    background:
+        linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+        var(--ifm-background-color);
+    background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
 }
 
-.aboutInner {
-    max-width: 680px;
+.heroInner {
+    max-width: var(--ifm-container-width-xl);
     margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
 }
 
-.sectionLabel {
+.heroText {
+    display: flex;
+    flex-direction: column;
+}
+
+.roleLabel {
     font-family: var(--ifm-font-family-monospace);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ifm-color-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
 }
 
-.aboutText {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--ifm-color-content);
-}
-
-.aboutLink {
-    display: inline-block;
-    margin-top: 1.5rem;
+.nameLabel {
     font-family: var(--ifm-font-family-monospace);
     font-size: 0.85rem;
-    color: var(--ifm-color-primary);
-    text-decoration: none;
-    transition: color 0.2s;
+    color: var(--ifm-color-gray-400);
+    margin-bottom: 1.5rem;
 }
 
-.aboutLink:hover {
-    color: var(--ifm-color-primary-light);
-    text-decoration: underline;
+.headline {
+    font-family: var(--ifm-heading-font-family);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ifm-heading-color);
+    margin: 0 0 1.5rem;
+}
+
+.headlineAccent {
+    color: var(--ifm-color-primary);
+}
+
+.heroDescription {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ifm-color-content);
+    opacity: 0.85;
+    max-width: 80%;
+    margin-bottom: 2rem;
+}
+
+.heroCtas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ifm-color-gray-0);
+    background: var(--ifm-color-primary);
+    border-radius: var(--ifm-global-radius);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.ctaPrimary:hover {
+    background: var(--ifm-color-primary-dark);
+    color: var(--ifm-color-gray-0);
+    text-decoration: none;
+}
+
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ifm-color-content);
+    border: 1px solid var(--ifm-hr-border-color);
+    border-radius: var(--ifm-global-radius);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.ctaSecondary:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+}
+
+.heroTerminal {
+    display: flex;
+    align-items: center;
 }
 
 /* ── Featured Posts ──────────────────────────────────────────── */
@@ -51,16 +126,8 @@
 }
 
 .postsInner {
-    max-width: 1100px;
+    max-width: var(--ifm-container-width-l);
     margin: 0 auto;
-}
-
-.sectionTitle {
-    font-family: var(--ifm-heading-font-family);
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    color: var(--ifm-heading-color);
 }
 
 .postsGrid {
@@ -70,6 +137,7 @@
 }
 
 .postCard {
+    position: relative;
     border: 1px solid var(--ifm-hr-border-color);
     border-radius: var(--ifm-global-radius);
     padding: 1.5rem;
@@ -80,10 +148,42 @@
     flex-direction: column;
 }
 
+.postCardFeatured {
+    grid-column: span 2;
+}
+
 .postCard:hover {
     border-color: var(--ifm-color-primary);
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
     text-decoration: none;
+}
+
+.postDateRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.postDate {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.7rem;
+    color: var(--ifm-color-gray-400);
+    white-space: nowrap;
+}
+
+.postDateLine {
+    flex: 1;
+    height: 1px;
+    background: var(--ifm-hr-border-color);
+}
+
+.postFeaturedLabel {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--ifm-color-primary);
+    white-space: nowrap;
 }
 
 .postTitle {
@@ -93,6 +193,10 @@
     color: var(--ifm-heading-color);
     margin-bottom: 0.5rem;
     line-height: 1.4;
+}
+
+.postCardFeatured .postTitle {
+    font-size: 1.25rem;
 }
 
 .postCard:hover .postTitle {
@@ -106,6 +210,13 @@
     flex: 1;
     margin-bottom: 1rem;
     opacity: 0.85;
+}
+
+.postFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
 .postTags {
@@ -139,82 +250,180 @@
     color: var(--ifm-color-primary-light);
 }
 
-/* ── Skills Grid ─────────────────────────────────────────────── */
-.skillsSection {
+/* ── About section ───────────────────────────────────────────── */
+.aboutSection {
     padding: 5rem 1.5rem;
     background: var(--ifm-background-color);
 }
 
-.skillsInner {
-    max-width: 1100px;
+.aboutInner {
+    max-width: var(--ifm-container-width-l);
     margin: 0 auto;
 }
 
-.skillsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-}
-
-.skillGroup {
-    border: 1px solid var(--ifm-hr-border-color);
-    border-radius: var(--ifm-global-radius);
-    padding: 1.5rem;
-    background: var(--ifm-card-background-color);
-}
-
-.skillGroupTitle {
+.sectionLabel {
     font-family: var(--ifm-font-family-monospace);
     font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ifm-color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.aboutLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aboutText {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--ifm-color-content);
+    margin: 0;
+}
+
+.skillsTitle {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ifm-color-primary);
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 0;
 }
 
-.chips {
+.skillPills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-.chip {
-    font-size: 0.8rem;
-    padding: 4px 12px;
-    border-radius: 6px;
-    background: var(--ifm-color-emphasis-200);
-    color: var(--ifm-color-content);
-}
-
-[data-theme='dark'] .chip {
-    background: rgba(226, 232, 240, 0.08);
+.pill {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--ifm-hr-border-color);
     color: var(--ifm-color-gray-400);
 }
 
+[data-theme='dark'] .pill {
+    background: rgba(226, 232, 240, 0.05);
+}
+
+/* ── Stats terminal card ─────────────────────────────────────── */
+.statsTerminal {
+    border-radius: 12px;
+    border: 1px solid var(--site-terminal-border);
+    background: linear-gradient(170deg, #0f1a2e 0%, #0a0f1c 100%);
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.statsHeader {
+    font-size: 0.8rem;
+    color: var(--site-terminal-green);
+    margin-bottom: 1.25rem;
+}
+
+.statsList {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.statRow {
+    display: flex;
+    flex-direction: column;
+}
+
+.statLabel {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--site-terminal-dim);
+    margin-bottom: 0.15rem;
+}
+
+.statValue {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ifm-color-gray-0);
+    margin: 0;
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
+@media screen and (max-width: 1200px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+
+    .heroInner {
+        gap: 0.5rem;
+    }
+}
+
 @media screen and (max-width: 996px) {
+    .heroInner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .heroSection {
+        min-height: auto;
+        padding: 5rem 1.5rem 3rem;
+    }
+
+    .headline {
+        font-size: 2rem;
+    }
+
     .postsGrid {
         grid-template-columns: 1fr;
     }
 
-    .skillsGrid {
-        grid-template-columns: repeat(2, 1fr);
+    .postCardFeatured {
+        grid-column: span 1;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .skillsTitle,
+    .skillPills {
+        display: none;
     }
 }
 
 @media screen and (max-width: 576px) {
+    .heroSection {
+        padding: 4rem 1rem 2.5rem;
+    }
 
-    .aboutSection,
+    .headline {
+        font-size: 1.5rem;
+    }
+
+    .heroDescription {
+        font-size: 0.95rem;
+    }
+
     .postsSection,
-    .skillsSection {
+    .aboutSection {
         padding: 3rem 1rem;
     }
 
     .aboutText {
-        font-size: 1.05rem;
-    }
-
-    .skillsGrid {
-        grid-template-columns: 1fr;
+        font-size: 0.95rem;
     }
 }

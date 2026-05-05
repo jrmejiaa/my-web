@@ -99,43 +99,7 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Site',
-            items: [
-              { label: 'Home', to: '/' },
-              { label: 'Blog', to: '/blog' },
-              { label: 'Docs', to: '/docs/yocto/welcome' },
-            ],
-          },
-          {
-            title: 'Connect',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/jrmejiaa',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://linkedin.com/in/jrmejiaa',
-              },
-              {
-                label: 'Email',
-                href: 'mailto:jrmejiaa@gmail.com',
-              },
-            ],
-          },
-          {
-            title: 'Meta',
-            items: [
-              { label: 'RSS Feed', href: 'pathname:///blog/rss.xml' },
-            ],
-          },
-        ],
-        copyright: `© ${new Date().getFullYear()} Jairo R. Mejia Aponte. Built with Docusaurus.`,
-      },
+      // Footer is swizzled — see src/theme/Footer/index.js
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
