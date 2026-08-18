@@ -1,0 +1,18 @@
+/**
+ * Blog post page — widen the main column to 75% (TOC takes the remaining 25%),
+ * matching DocItem/Layout so the post body reaches ~1050px at wide viewports.
+ * Desktop only; below 997px the columns stack full-width via Infima defaults.
+ */
+@media (min-width: 997px) {
+  .blogPostMainCol {
+    max-width: 75% !important;
+  }
+
+  /* No-TOC post: same 75% width, but there is no TOC column, so center the
+     single column in the container instead of pinning it to the left. */
+  .blogPostMainColCentered {
+    max-width: 75% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
