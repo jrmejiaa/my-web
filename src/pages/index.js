@@ -43,6 +43,51 @@ const FEATURED_POSTS = [
   },
 ];
 
+const FEATURED_DOCS = [
+  {
+    title: 'How to debug applications in Yocto',
+    summary: 'Network errors, misordered inherits, and config overrides that silently fail — the debugging gotchas that cost hours, and how to work around them.',
+    path: '~/yocto/',
+    tags: ['yocto', 'advance-yocto', 'linux'],
+    href: '/docs/yocto/debugging_yocto',
+    featured: true,
+  },
+  {
+    title: 'How to use devtool to create and test applications on Yocto',
+    summary: 'Create a recipe from scratch, build a library, and wire up a ptest package for unit tests — the devtool basics, end to end.',
+    path: '~/yocto/',
+    tags: ['devtool', 'yocto', 'user-space'],
+    href: '/docs/yocto/how-to-use-devtool-to-create-and-test-apps',
+  },
+  {
+    title: 'How to create plugins for devtool in Yocto',
+    summary: 'The undocumented part of devtool: how to register your own subcommands and automate repetitive steps in your daily workflow.',
+    path: '~/yocto/',
+    tags: ['devtool', 'yocto', 'advance-yocto'],
+    href: '/docs/yocto/how-to-create-plugins-for-devtool-in-yocto',
+  },
+  {
+    title: 'Using pkgconfig for your custom libraries',
+    summary: 'Stop hand-maintaining compiler and linker flags. Generate a .pc file for your shared library and let pkgconfig do the work.',
+    path: '~/linux/',
+    tags: ['cross-compilation', 'user-space', 'linux'],
+    href: '/docs/linux/how-to-use-pkgconfig',
+  },
+  {
+    title: 'How to start with Yocto even without hardware',
+    summary: 'A realistic Yocto setup built on Bootlin layers and QEMU — a better starting point than Poky when you are heading toward a real product.',
+    path: '~/yocto/',
+    tags: ['yocto', 'qemu', 'fundamentals-devtool'],
+    href: '/docs/yocto/how-to-start-with-yocto-in-qemu',
+  },
+];
+
+const DOC_LINKS = [
+  { label: '~/yocto', href: '/docs/yocto/welcome' },
+  { label: '~/linux', href: '/docs/linux/welcome-linux' },
+  { label: '~/coding', href: '/docs/coding/c_cpp/welcome-c-cpp' },
+];
+
 const SKILLS = [
   'Yocto / OpenEmbedded', 'Bitbake', 'kas', 'CMake', 'Makefile',
   'C / C++', 'Python', 'Bash', 'Linux Kernel', 'systemd',
@@ -162,6 +207,43 @@ export default function Home() {
             ))}
           </div>
           <Link to="/blog" className={styles.viewAll}>View all posts →</Link>
+        </div>
+      </section>
+
+      {/* Featured Docs */}
+      <section className={styles.docsSection}>
+        <div className={styles.postsInner}>
+          <div className={styles.sectionLabel}>// featured docs</div>
+          <div className={styles.postsGrid}>
+            {FEATURED_DOCS.map((doc) => (
+              <Link
+                key={doc.href}
+                to={doc.href}
+                className={`${styles.postCard} ${doc.featured ? styles.docCardFeatured : ''}`}
+              >
+                <div className={styles.postDateRow}>
+                  <span className={styles.docPath}>{doc.path}</span>
+                  <span className={styles.postDateLine} />
+                  {doc.featured && <span className={styles.postFeaturedLabel}>Tutorial</span>}
+                </div>
+                <div className={styles.postTitle}>{doc.title}</div>
+                <div className={styles.postSummary}>{doc.summary}</div>
+                <div className={styles.postTags}>
+                  {doc.tags.map((t) => (
+                    <span key={t} className={styles.tag}>{t}</span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className={styles.docsLinks}>
+            {DOC_LINKS.map((link, i) => (
+              <React.Fragment key={link.href}>
+                {i > 0 && <span className={styles.docsLinkDivider} />}
+                <Link to={link.href} className={styles.docsLink}>{link.label}</Link>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>

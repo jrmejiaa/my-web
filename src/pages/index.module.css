@@ -141,11 +141,26 @@
     border: 1px solid var(--ifm-hr-border-color);
     border-radius: var(--ifm-global-radius);
     padding: 1.5rem;
+    padding-left: 1.75rem;
     background: var(--ifm-card-background-color);
     transition: border-color 0.2s, box-shadow 0.2s;
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+/* Left-edge accent bar — dim by default, brightens on hover */
+.postCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--ifm-color-primary);
+    opacity: 0.25;
+    transition: opacity 0.2s;
 }
 
 .postCardFeatured {
@@ -156,6 +171,10 @@
     border-color: var(--ifm-color-primary);
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
     text-decoration: none;
+}
+
+.postCard:hover::before {
+    opacity: 1;
 }
 
 .postDateRow {
@@ -248,6 +267,56 @@
 .viewAll:hover {
     text-decoration: underline;
     color: var(--ifm-color-primary-light);
+}
+
+/* ── Featured Docs — reuses .postCard container; only exceptions below ── */
+.docsSection {
+    padding: 5rem 1.5rem;
+    background: var(--ifm-background-color);
+}
+
+/* Blue path label replaces the gray date */
+.docPath {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.7rem;
+    color: var(--ifm-color-primary);
+    white-space: nowrap;
+}
+
+/* Mirror of Posts: wide card anchored top-right */
+.docCardFeatured {
+    grid-column: 2 / 4;
+    grid-row: 1;
+}
+
+.docCardFeatured .postTitle {
+    font-size: 1.25rem;
+}
+
+.docsLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.docsLink {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+}
+
+.docsLink:hover {
+    text-decoration: underline;
+    color: var(--ifm-color-primary-light);
+}
+
+.docsLinkDivider {
+    width: 1px;
+    height: 0.85rem;
+    background: var(--ifm-hr-border-color);
 }
 
 /* ── About section ───────────────────────────────────────────── */
@@ -395,6 +464,11 @@
         grid-column: span 1;
     }
 
+    .docCardFeatured {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
     .aboutGrid {
         grid-template-columns: 1fr;
     }
@@ -420,6 +494,10 @@
 
     .postsSection,
     .aboutSection {
+        padding: 3rem 1rem;
+    }
+
+    .docsSection {
         padding: 3rem 1rem;
     }
 
