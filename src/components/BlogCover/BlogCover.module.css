@@ -1,0 +1,137 @@
+/* Cover image + AI-attribution footer, themed with the site palette. */
+
+.cover {
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image {
+    width: 90%;
+    max-width: 50rem;
+    height: auto;
+    display: block;
+    border-radius: var(--ifm-global-radius);
+    border: var(--ifm-global-border-width) solid var(--ifm-hr-border-color);
+}
+
+/* On narrow screens let the cover use nearly the full content width. */
+@media (max-width: 768px) {
+    .image {
+        width: 100%;
+    }
+}
+
+.caption {
+    margin-top: 0.6rem;
+    width: 80%;
+    max-width: 40rem;
+}
+
+@media (max-width: 768px) {
+    .caption {
+        width: 100%;
+    }
+}
+
+.details {
+    font-size: 0.8rem;
+    color: var(--ifm-color-gray-500);
+}
+
+.summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--ifm-color-gray-500);
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    list-style: none; /* hide default triangle (Firefox) */
+}
+
+/* Hide the default disclosure triangle (WebKit/Blink). */
+.summary::-webkit-details-marker {
+    display: none;
+}
+
+.summary:hover {
+    color: var(--ifm-color-primary);
+}
+
+.icon {
+    color: var(--site-color-accent);
+    flex-shrink: 0;
+}
+
+.prompt {
+    position: relative;
+    margin: 0.6rem auto 0;
+    padding: 0.75rem 1rem;
+    max-width: 40rem;
+    text-align: left;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ifm-color-content);
+    background: var(--ifm-hover-overlay);
+    border-left: 3px solid var(--site-color-accent);
+    border-radius: var(--ifm-global-radius);
+}
+
+.copyButton {
+    float: right;
+    margin: 0 0 0.35rem 0.75rem;
+    padding: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--ifm-global-radius);
+    cursor: pointer;
+    color: var(--ifm-color-gray-500);
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.copyButton:hover {
+    color: var(--ifm-color-primary);
+}
+
+.copyButtonIcons {
+    position: relative;
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.copyButtonIcon,
+.copyButtonSuccessIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: currentColor;
+    opacity: inherit;
+    width: inherit;
+    height: inherit;
+    transition: all var(--ifm-transition-fast) ease;
+}
+
+.copyButtonSuccessIcon {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.33);
+    opacity: 0;
+    color: var(--site-terminal-green);
+}
+
+.copyButtonCopied .copyButtonIcon {
+    transform: scale(0.33);
+    opacity: 0;
+}
+
+.copyButtonCopied .copyButtonSuccessIcon {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition-delay: 0.075s;
+}
