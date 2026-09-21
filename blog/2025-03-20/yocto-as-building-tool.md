@@ -4,6 +4,10 @@ title: Why I use Yocto over Buildroot as building tool
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]
+image: ./cover-yocto-as-building-tool.png
+imageStyle: isometric
+imageModel: Gemini Nano Banana Pro
+imagePrompt: "Isometric flat-vector illustration of a technical system built from stacked, slightly exploded horizontal layers — distinct blue slabs offset from one another so they read as separate, swappable pieces rather than one solid block. The shared lower layers branch upward into two differently assembled machine-like structures, making it clear the same base pieces compose more than one result. Flat shading, solid fills, crisp geometry, no outlines needed. Blue-dominant palette derived from deep navy (#0b1120), blue (#3b82f6, #60a5fa) and pale blue (#dbeafe), with cyan (#06b6d4) as a minority accent (~10–25% of the frame) highlighting the seams and connection points between layers. Soft blue-tinted background wash with gentle depth. Clear focal hierarchy centered on the branching stack. Absolutely no text, no letters, no numbers, no words, no labels, no logos, no faces, no UI. 16:9 aspect ratio."
 ---
 
 Yet Another Opinion about Yocto vs Buildroot... If you ever come across to work with YANG, I hope you understand the reference. If you don't have a clue what I am talking about, don't worry, I have no clue of YANG and SNMP until a few months ago 😅. As you may get for the title, I will just write why I think Yocto and OpenEmbedded is the right tool for building your custom Linux Embedded systems, even for personal projects. Let's go into it 🤓

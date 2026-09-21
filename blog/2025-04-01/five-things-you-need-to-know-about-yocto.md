@@ -4,6 +4,10 @@ title: Five things you need to know about working with Yocto
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]
+image: ./cover.png
+imageStyle: isometric
+imageModel: Gemini Nano Banana Pro
+imagePrompt: "Isometric flat-vector illustration, flat-shaded with crisp solid fills and bold clean silhouettes, modern editorial tech style. A minimalist microchip sits as an independent base platform on the ground plane; resting on top of it is a stack of flat rectangular blocks piled one on top of another like layers of a built system. Small flat fragment pieces float inward from the sides and converge to complete the single topmost block of the stack, snapping into place like assembling tiles. Blue-dominant palette derived from deep navy (#0b1120), blue (#3b82f6, #60a5fa) and pale blue (#dbeafe), with cyan (#06b6d4) as a minority accent (~10-25% of the frame) glowing on the converging fragments and chip contacts. Background is a soft deep-navy duotone gradient with generous negative space. Clear focal hierarchy centered on the block stack. Absolutely no text, no letters, no numbers, no words, no labels, no logos, no faces, no UI, no penguins. 16:9 aspect ratio."
 ---
 
 When you started with Yocto for the first time. It could be overwhelm to not know what to expect. I remember when I started working with Yocto my first thought was: "This is very cool, but also extremely complex". I spent a good amount of time with my developer leader and myself until I grasp a good amount of knowledge about this tool. In this blog, I want to summarize five things that you need to know before working with Yocto.

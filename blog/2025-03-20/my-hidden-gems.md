@@ -4,6 +4,10 @@ title: My developer setup and some hidden terminal gems
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [open-source,dev-setup,linux]
+image: ./cover-hidden-gems.png
+imageStyle: isometric
+imageModel: Gemini Nano Banana Pro
+imagePrompt: "Isometric flat-vector illustration, flat-shaded with crisp geometric shapes and no outlines-as-glow. A central isometric terminal window sits as the clear hero on a raised platform — a bold, blocky command-line box that dominates the frame. Four or five simplified flat tool-blocks (abstract chunky glyphs — a small gear, a stack of plates, a magnifier lens, a file card) sit around the edges and feed inward along clean isometric conduits/paths that all converge into the central terminal. Blue-dominant palette derived from deep navy (#0b1120), blue (#3b82f6, #60a5fa) and pale blue (#dbeafe) for the terminal and platform, with cyan (#06b6d4) as a minority accent (~15% of the frame) lighting the converging paths and a few glyph highlights. Soft blue-navy gradient background with gentle negative space around the platform. Clear focal hierarchy: the terminal reads first, the converging tools second. Absolutely no text, no letters, no numbers, no words, no labels. No brand logos. No faces. Simple flat icons or symbols are allowed. 16:9 aspect ratio."
 ---
 
 In this blog, I will discuss some of the amazing open-source tools that I used on my daily basis while developing Embedded systems on Linux. I will mention why I find it useful and how you can install it and test it by yourself.
