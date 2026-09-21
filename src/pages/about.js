@@ -3,9 +3,9 @@ import Layout from '@theme/Layout';
 import styles from './about.module.css';
 
 const HIGHLIGHTS = [
-  'Designed and maintained Yocto-based BSPs for production embedded Linux devices',
-  'Built custom Linux distributions targeting ARM and x86 platforms',
-  'Developed userspace daemons and system services with C/C++ and systemd',
+  'Designed and maintained Yocto-based Layers for production embedded Linux devices',
+  'Built custom Linux distributions targeting 64-bits ARM platforms',
+  'Developed userspace high-performance async daemons with C/C++ based on epoll and DBus',
   'Implemented CI/CD pipelines for automated image builds and testing',
   'Contributed to cross-team tooling that reduced build iteration time significantly',
 ];
@@ -21,16 +21,24 @@ export default function About() {
           <div className={styles.bio}>
             <p>
               I'm an Embedded Software Engineer with 4+ years of experience building
-              Linux-based systems for production hardware. My day-to-day revolves around
-              Yocto and Linux Embedded devices — from writing recipes and configuring
-              BSP layers to debugging kernel modules and optimizing boot times.
+              Linux-based systems for production hardware.
+
+              My day-to-day revolves around Yocto and Linux Embedded devices, from
+              writing recipes and configuring layers to debugging kernel modules
+              and user space application for optimizing boot times.
             </p>
             <p>
               Before specializing in embedded Linux, I studied electronics engineering in
               Colombia and later completed my master's in Germany, where I deepened my
-              understanding of real-time systems and hardware-software co-design. That
+              understanding of embedded systems and hardware-software co-design. My thesis
+              was based on RISC-V processors to create a multi-core modular processor. That
               background gives me a perspective that spans from register-level hardware
               to high-level build orchestration.
+            </p>
+            <p>
+              I am currently working on Belden Inc, with Yocto-based Linux systems for
+              industrial networking devices — railway routers, vehicle gateways, and
+              connectivity platforms running LTE, 5G, WiFi, and GPS.
             </p>
             <p>
               I started this site as a personal knowledge base — a place to document the
