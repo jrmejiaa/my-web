@@ -21,11 +21,11 @@ const FEATURED_POSTS = [
     date: '2025-05-01',
   },
   {
-    title: 'Why you should use kas on Yocto',
-    summary: 'A better way to manage your Yocto builds and layer configurations.',
+    title: 'Why I use Yocto over Buildroot as building tool',
+    summary: 'As you may get for the title, I will just write why I think Yocto and OpenEmbedded is the right tool for building your custom Linux Embedded systems, even for personal projects.',
     tags: ['cross-compilation', 'yocto', 'linux'],
-    href: '/blog/why-you-should-use-kas-on-yocto',
-    date: '2025-06-01',
+    href: '/blog/Why-I-use-Yocto-over-Buildroot',
+    date: '2025-03-20',
   },
   {
     title: 'Why you need to use pkgconfig for your own libraries',
