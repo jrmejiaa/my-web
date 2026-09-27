@@ -1,6 +1,7 @@
 ---
 slug: My-developer-setup-and-some-hidden-terminal-gems
 title: My developer setup and some hidden terminal gems
+description: "Open-source tools I use daily while developing embedded systems on Linux."
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [open-source,dev-setup,linux]

@@ -1,6 +1,7 @@
 ---
 slug: five-things-you-need-to-know-about-working-with-yocto
 title: Five things you need to know about working with Yocto
+description: "Building Linux systems is still tough, but Yocto and Buildroot simplify it a lot. The problems of building a Linux embedded device from scratch and why these tools change the game."
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]

@@ -1,6 +1,7 @@
 ---
 slug: Why-I-use-Yocto-over-Buildroot
 title: Why I use Yocto over Buildroot as building tool
+description: "As you may get for the title, I will just write why I think Yocto and OpenEmbedded is the right tool for building your custom Linux Embedded systems, even for personal projects."
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]

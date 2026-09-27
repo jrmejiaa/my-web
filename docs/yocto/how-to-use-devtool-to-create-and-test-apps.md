@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
-tags: [cross-compilation,yocto,fundamentals-devtool,user-space,linux]
+description: "Create a recipe from scratch, build a library, and wire up a ptest package for unit tests — the devtool basics, end to end."
+tags: [cross-compilation,yocto,linux,fundamentals-devtool,user-space]
 ---
 
 # How to use devtool to create and test applications on Yocto

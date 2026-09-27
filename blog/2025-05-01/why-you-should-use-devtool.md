@@ -1,6 +1,7 @@
 ---
 slug: why-you-should-use-devtool-on-yocto
 title: Why you should use devtool on Yocto
+description: "Stop reinventing the wheel — devtool makes cross-compilation development easy."
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]
