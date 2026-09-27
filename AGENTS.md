@@ -20,7 +20,7 @@ body. Content focuses on Yocto, embedded Linux, and embedded systems.
 | `src/pages/`                      | `index.js` (landing), `about.js` (bio/CV)                                 |
 | `src/components/TerminalHero/`    | Animated typing-effect hero component                                     |
 | `src/components/GiscusComponent/` | Giscus wrapper, color-mode aware                                          |
-| `src/components/BlogCover/`       | Auto cover image + AI-attribution footer (reads post frontmatter)         |
+| `src/components/Cover/`           | Cover family: `CoverFigure` core + `BlogCover` (auto) / `DocCover` (manual) |
 | `src/theme/BlogPostItem/`         | Swizzled — injects Giscus when `enableComments: true`                     |
 | `src/theme/BlogPostItem/Content/` | Swizzled — renders `<BlogCover />` above the post body                    |
 | `src/theme/DocItem/Layout/`       | Swizzled — injects Giscus on every doc page                               |
@@ -41,8 +41,9 @@ loads in cascade order: `variables.css` → `fonts.css` → `custom.css`, so tok
 **Swizzled components** (wrap originals, do not fork them):
 
 - `src/theme/BlogPostItem/` — appends `<GiscusComponent />` when `frontMatter.enableComments === true`
-- `src/theme/BlogPostItem/Content/` — renders `<BlogCover />` before `<MDXContent>`, so the cover
-  lands below the title/metadata and above the post body
+- `src/theme/BlogPostItem/Content/` — renders `<BlogCover />` (from `src/components/Cover/`) before
+  `<MDXContent>`, so the cover lands below the title/metadata and above the post body. Docs opt in
+  manually by importing `<DocCover />` from the same family.
 - `src/theme/BlogPostPage/` — passes an explicit `isBlogPostPage` marker to `BlogLayout` so every post
   (even those without a TOC) gets the wide doc-style layout
 - `src/theme/BlogLayout/` — applies the wide layout to blog post pages

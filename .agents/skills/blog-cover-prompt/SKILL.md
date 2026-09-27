@@ -14,7 +14,8 @@ The skill has two modes:
 
 1. **Generate mode (default)** — negotiate the concept, then produce two divergent prompt options.
 2. **Finalize mode** — after the user picks a winner in Gemini, record the chosen prompt and style
-   into the post's frontmatter (the user still saves the `cover.jpg` file themselves).
+   into the post's frontmatter (the user still saves the `cover.png` file themselves). For docs, it
+   also wires `<DocCover />` into the page body.
 
 The user is a partner in deciding **what the image is about**. Before any prompt is written, the skill
 and the user negotiate the core concept through a short, bounded grilling phase (see below). That same
@@ -229,47 +230,70 @@ Detect content type by input path.
 
 **Blog** (`blog/YYYY-MM-DD-slug/index.md`) — co-locate the cover in the post folder:
 
-- Save path: `blog/YYYY-MM-DD-slug/cover.jpg`
+- Save path: `blog/YYYY-MM-DD-slug/cover.png`
 - Frontmatter (see Finalize mode for the full recorded set):
 
     ```yaml
-    image: ./cover.jpg
+    image: ./cover.png
     ```
 
 **Docs** (`docs/<section>/<slug>.md`) — docs are flat files, so use a mirrored tree under `static/`:
 
-- Save path: `static/img/covers/docs/<section>/<slug>.jpg`
+- Save path: `static/img/covers/docs/<section>/<slug>.png`
 - Frontmatter:
 
     ```yaml
-    image: /img/covers/docs/<section>/<slug>.jpg
+    image: /img/covers/docs/<section>/<slug>.png
     ```
 
 Blog and docs use the **same house style**. Storage differs; look does not.
+
+Covers are saved as **`.png`** by default (that is what the generator renders to in practice). If the
+user saves a different extension, the recorded `image` path must follow the **actual** saved file — do
+not assume `.jpg`.
 
 ## Finalize mode (record the chosen cover)
 
 Runs **after** the user has generated images in Gemini and picked a winner. This mode records the
 choice into the post's frontmatter so that (a) the anti-monotony nudge has real history to read, and
 (b) a future blog component can render a "view prompt" affordance. The skill still **never** writes the
-image file — the user saves `cover.jpg` at the save path themselves.
+image file — the user saves the cover image at the save path themselves.
+
+For **docs**, finalize additionally wires the manual cover into the page body, because — unlike the
+blog, where the swizzled theme places `<BlogCover />` automatically — a doc only shows a cover when the
+author explicitly places `<DocCover />`. Finalize does that wiring so the doc renders its cover without
+further manual steps.
 
 Procedure:
 
 1. Identify the post (same input resolution as generate mode) and ask the user **which option won** if
    not already stated.
-2. Write these fields into the post's frontmatter, using the **exact prompt of the winning option**
-   the skill produced:
+2. Write these fields into the frontmatter, using the **exact prompt of the winning option** the skill
+   produced. The `image` path uses the **actual saved extension** (`.png` by default):
 
     ```yaml
-    image: ./cover.jpg            # or the docs static path
+    image: ./cover.png            # or the docs static path
     imagePrompt: "<the full winning prompt, verbatim>"
     imageStyle: clean-flat        # or: isometric
     imageModel: Gemini Nano Banana Pro
     ```
 
-3. Confirm the **save path** where the user must drop the `cover.jpg`, and remind them the skill does
-   not write the image itself.
+3. **Docs only — wire `<DocCover />` into the body** (skip this step entirely for blog posts):
+
+    a. **Import.** Ensure `import {DocCover} from '@site/src/components/Cover';` is present. Append it
+       to the existing import block at the top of the body (grouped with other `import` lines, below
+       the frontmatter). If the doc has no imports yet, add it as the first body line after the
+       frontmatter, separated by a blank line.
+    b. **Placement.** Insert `<DocCover />` immediately **after the first H1 heading**. If the doc has
+       no H1, fall back to placing it right after the import block. The author can move it later.
+    c. **Idempotency.** Before inserting, check for an existing `DocCover` import and an existing
+       `<DocCover />` tag; insert each **only if absent**. Frontmatter fields are still overwritten
+       with the winning values. Re-running finalize must never create duplicates.
+    d. **Existing banner warning.** If the body contains a leading hand-written `<img …>` banner, do
+       **not** rewrite or remove it. Add `<DocCover />` per (b) and emit a one-line warning telling the
+       user a manual `<img>` was detected so they can remove the old banner deliberately.
+4. Confirm the **save path** where the user must drop the cover image (`.png` by default), and remind
+   them the skill does not write the image itself.
 
 `imageStyle` uses a stable slug (`clean-flat` or `isometric`) so the anti-monotony nudge can grep it
 reliably across posts.
@@ -316,5 +340,7 @@ Present exactly this:
 - If a free-layer choice would fight the brand thread (e.g. implies a non-blue-dominant image or
   photorealism), reshape that choice, never the brand thread.
 - In **finalize mode**, record the **verbatim** winning prompt and the correct `imageStyle` slug; never
-  write the image file — the user saves it.
+  write the image file — the user saves it. For **docs only**, also wire `<DocCover />` into the body
+  (import + tag after the first H1), idempotently; never rewrite or remove an author's existing `<img>`
+  banner — warn instead. Blog finalize touches frontmatter only.
 - If no path, no pasted text, and no clear current-context post exist, ask for one — do not guess.
