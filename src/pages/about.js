@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Button from '@site/src/components/Button';
 import styles from './about.module.css';
 
 const HIGHLIGHTS = [
@@ -56,14 +57,15 @@ export default function About() {
           </ul>
 
           <div className={styles.cvSection}>
-            <a
-              href="/files/cv.pdf"
-              className={styles.cvButton}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV ↓
-            </a>
+            <Button variant="primary" href="/files/cv.pdf" icon="↓">
+              Download CV
+            </Button>
+            <Button
+              variant="secondary"
+              href="https://linkedin.com/in/jairo-mejia/"
+              icon="↗">
+              LinkedIn
+            </Button>
           </div>
         </div>
       </div>
