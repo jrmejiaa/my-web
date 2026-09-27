@@ -1,0 +1,46 @@
+/* Shared call-to-action button. Two variants: primary (solid) and secondary
+   (outline). Uses design tokens from src/css/variables.css so both light and
+   dark themes stay consistent. */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.5rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--ifm-global-radius);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+/* Primary — solid primary fill, the dominant action. */
+.primary {
+    color: var(--ifm-color-gray-0);
+    background: var(--ifm-color-primary);
+}
+
+.primary:hover {
+    background: var(--ifm-color-primary-dark);
+    color: var(--ifm-color-gray-0);
+}
+
+/* Secondary — neutral outline resolving to primary on hover. */
+.secondary {
+    color: var(--ifm-color-content);
+    border: 1px solid var(--ifm-hr-border-color);
+}
+
+.secondary:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+}
+
+.icon {
+    font-family: var(--ifm-font-family-monospace);
+}

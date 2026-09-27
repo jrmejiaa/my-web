@@ -64,24 +64,9 @@
 
 .cvSection {
     margin-top: 2.5rem;
-}
-
-.cvButton {
-    display: inline-block;
-    font-family: var(--ifm-font-family-monospace);
-    font-size: 0.85rem;
-    padding: 0.65rem 1.5rem;
-    border: 1px solid var(--ifm-color-primary);
-    border-radius: var(--ifm-global-radius);
-    color: var(--ifm-color-primary);
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
-
-.cvButton:hover {
-    background: var(--ifm-color-primary);
-    color: #fff;
-    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 576px) {

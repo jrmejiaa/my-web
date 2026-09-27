@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import TerminalHero from '@site/src/components/TerminalHero';
+import Button from '@site/src/components/Button';
 import styles from './index.module.css';
 
 const FEATURED_POSTS = [
@@ -83,7 +84,7 @@ const FEATURED_DOCS = [
 ];
 
 const DOC_LINKS = [
-  { label: '~/yocto', href: '/docs/yocto/welcome' },
+  { label: '~/yocto', href: '/docs/yocto/welcome-yocto' },
   { label: '~/linux', href: '/docs/linux/welcome-linux' },
   { label: '~/coding', href: '/docs/coding/c_cpp/welcome-c-cpp' },
 ];
@@ -125,15 +126,10 @@ export default function Home() {
               — the kind of detail that doesn't fit in a README.
             </p>
             <div className={styles.heroCtas}>
-              <Link to="/blog" className={styles.ctaPrimary}>Read the blog</Link>
-              <a
-                href="/files/cv.pdf"
-                className={styles.ctaSecondary}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download CV ↓
-              </a>
+              <Button variant="primary" to="/blog">Read the blog</Button>
+              <Button variant="secondary" href="/files/cv.pdf" icon="↓">
+                Download CV
+              </Button>
             </div>
           </div>
           <div className={styles.heroTerminal}>
