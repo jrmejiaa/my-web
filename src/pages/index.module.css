@@ -200,8 +200,9 @@
 
 .postTags {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.4rem;
+    overflow: hidden;
 }
 
 .tag {
@@ -212,6 +213,7 @@
     background: rgba(59, 130, 246, 0.1);
     color: var(--ifm-color-primary);
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 .viewAll {

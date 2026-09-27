@@ -59,3 +59,19 @@ for covers and navigation. Not to be confused with a visual "section" of a rende
 The fixed visual identity every cover shares: a blue-dominant palette and one of the sibling
 illustration styles, no text, 16:9. It is what makes covers across the blog and docs read as one
 site. Defined and enforced by the `blog-cover-prompt` skill.
+
+### Content index
+
+The full, display-ready catalog of every published post and doc — title, permalink, tags, and
+summary — derived from the content's own frontmatter and published as site-wide data. It is the
+single source of truth a page reads instead of restating a post's or doc's details by hand. A doc's
+`Section` is part of its index entry, derived from the permalink rather than authored.
+
+### Featured content
+
+The ordered subset of posts or docs a page chooses to highlight, identified by permalink. It is an
+editorial selection — which items appear and in what order — resolved against the `Content index`
+for display. The selection lives with the page; the details it shows live with the content. A
+featured card shows at most the first three of an item's tags, so tag count never changes a card's
+size; the full tag set stays on the item itself.
+

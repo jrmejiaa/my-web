@@ -51,6 +51,10 @@ const config = {
     ],
   ],
 
+  // Local plugin: republishes blog/doc frontmatter as global data so pages can
+  // render content cards from the source of truth. See plugins/content-index-plugin.js.
+  plugins: ['./plugins/content-index-plugin.js'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

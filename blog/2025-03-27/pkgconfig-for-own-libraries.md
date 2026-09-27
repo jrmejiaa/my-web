@@ -1,6 +1,7 @@
 ---
 slug: Why-you-need-to-use-pkgconfig-for-your-own-libs
 title: Why you need to use pkgconfig for your own libraries
+description: "A better way to manage compiler and linker flags across projects."
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [cross-compilation,yocto,linux]

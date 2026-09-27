@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: "Network errors, misordered inherits, and config overrides that silently fail — the debugging gotchas that cost hours, and how to work around them."
 tags: [yocto,advance-yocto,linux]
 ---
 
