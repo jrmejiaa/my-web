@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 1
 tags: [yocto, fundamentals-python, setuptools]
 ---

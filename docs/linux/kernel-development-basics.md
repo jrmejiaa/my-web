@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 2
 tags: [cross-compilation,driver,kernel-space,linux]
 ---

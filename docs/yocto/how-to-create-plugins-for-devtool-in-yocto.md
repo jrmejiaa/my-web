@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 4
 description: "The undocumented part of devtool: how to register your own subcommands and automate repetitive steps in your daily workflow."
 tags: [yocto,advance-yocto,linux]
