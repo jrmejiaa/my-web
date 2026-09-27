@@ -19,6 +19,13 @@ import {useColorMode} from '@docusaurus/theme-common';
 export default function CommentsThread() {
   const {colorMode} = useColorMode();
 
+  // Dark mode: the default Giscus `dark` theme is GitHub's near-black
+  // (#0d1117), which reads as a foreign box against our blue-dark palette
+  // (#0b1120). `transparent_dark` drops the canvas background so the page
+  // color shows through and the thread blends in. Light mode already matches,
+  // so it stays on the stock `light` theme.
+  const giscusTheme = colorMode === 'dark' ? 'transparent_dark' : 'light';
+
   return (
     <Giscus
       repo="jrmejiaa/my-web"
@@ -30,7 +37,7 @@ export default function CommentsThread() {
       reactionsEnabled="1"
       emitMetadata="1"
       inputPosition="top"
-      theme={colorMode}
+      theme={giscusTheme}
       lang="en"
       loading="lazy"
       crossorigin="anonymous"
