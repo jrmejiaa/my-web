@@ -4,6 +4,10 @@ title: Why you need to use Yocto or Buildroot in Linux embedded development ASAP
 authors: [jrmejiaa]
 enableComments: true # for Gisqus
 tags: [building-tools,cross-compilation,yocto,buildroot]
+image: ./cover.png
+imagePrompt: "Clean flat vector illustration, modern editorial tech style: crisp solid shapes with bold silhouettes and minimal gradients. A left-to-right composition where a loose, overwhelming cluster of mismatched geometric pieces — blocks, cogs, connectors, small chip-like squares floating at chaotic angles — gradually resolves into a single clean, neatly stacked and aligned structure on the right. Blue-dominant palette derived from deep navy (#0b1120), blue (#3b82f6, #60a5fa) and pale blue (#dbeafe), freely using shades and gradients between them, with cyan (#06b6d4) as a minority accent (~10–25% of the frame) highlighting the ordered right-hand structure. Soft blue duotone-gradient background. Clear focal hierarchy with the chaotic-to-ordered flow as the single subject, legible at thumbnail size. The disorder should feel complex but not messy-ugly, and the ordered side should feel solid and manageable rather than empty. Absolutely no text, no letters, no numbers, no words, no labels. No brand logos. No faces. Simple flat icons or symbols are allowed. 16:9 aspect ratio."
+imageStyle: clean-flat
+imageModel: Gemini Nano Banana Pro
 ---
 
 Building Linux systems is still tough, but Yocto and Buildroot simplify it a lot. In this blog, you will see the problems of building a Linux embedded device from scratch and why these tools changes the game for better.
