@@ -1,9 +1,8 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
-import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import IconCopy from '@theme/Icon/Copy';
 import IconSuccess from '@theme/Icon/Success';
-import styles from './BlogCover.module.css';
+import styles from './Cover.module.css';
 
 /**
  * Copy button for the prompt, reusing the same glyphs as the code-block copy
@@ -70,44 +69,40 @@ function SparklesIcon() {
 }
 
 /**
- * Automatic cover image + AI-attribution footer for blog posts.
+ * Pure presentational cover: figure + image + AI-attribution footer.
  *
- * Rendering is fully driven by frontmatter and only happens when the post is a
- * full blog-post page AND all four cover fields are present:
- *   - `image`        — resolved here via the webpack-processed `assets.image`
- *   - `imageModel`   — shown in the collapsed footer ("Generated with …")
- *   - `imagePrompt`  — revealed in the <details> disclosure
- *   - `imageStyle`   — gate only (consumed by the blog-cover-prompt skill, not shown)
+ * This component owns everything shared between contexts — the markup, the
+ * copy button, the sparkles icon, the CSS module, and the all-fields-present
+ * gate. It has no knowledge of where its data came from; the wrappers
+ * (BlogCover / DocCover) resolve the data from their respective plugin hooks
+ * and hand it in as plain props.
  *
- * The all-four requirement is intentional: the skill writes these fields
- * together, so their combined presence marks a finalized, skill-generated cover.
+ * The all-or-nothing gate is intentional: the blog-cover-prompt skill writes
+ * these fields together, so their combined presence marks a finalized cover.
+ * When a field is missing this returns `null` and lets the caller decide
+ * whether that is silent (blog) or worth a visible warning (docs).
+ *
+ * @param {string} src        resolved image URL (already usable as <img src>)
+ * @param {string} title      used as the image alt text
+ * @param {string} imageModel generator name, shown in the collapsed footer
+ * @param {string} imagePrompt prompt text revealed in the <details> disclosure
+ * @param {string} imageStyle  gate only (consumed by the skill, not shown)
  */
-export default function BlogCover() {
-  const {metadata, frontMatter, assets, isBlogPostPage} = useBlogPost();
-
-  // Only render on the full post page, never in the list/feed view.
-  if (!isBlogPostPage) {
-    return null;
-  }
-
-  const {imageModel, imagePrompt, imageStyle} = frontMatter;
-  // `assets.image` is the webpack-resolved URL; `frontMatter.image` is the raw
-  // "./…" string and must not be used as an <img src>.
-  const image = assets?.image;
-
+export default function CoverFigure({
+  src,
+  title,
+  imageModel,
+  imagePrompt,
+  imageStyle,
+}) {
   // All-or-nothing gate: every field must exist or the block is skipped.
-  if (!image || !imageModel || !imagePrompt || !imageStyle) {
+  if (!src || !imageModel || !imagePrompt || !imageStyle) {
     return null;
   }
 
   return (
     <figure className={styles.cover}>
-      <img
-        className={styles.image}
-        src={image}
-        alt={metadata.title}
-        loading="lazy"
-      />
+      <img className={styles.image} src={src} alt={title} loading="lazy" />
       <figcaption className={styles.caption}>
         <details className={styles.details}>
           <summary className={styles.summary}>

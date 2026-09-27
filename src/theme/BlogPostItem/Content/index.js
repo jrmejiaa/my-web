@@ -12,7 +12,7 @@ import clsx from 'clsx';
 import {blogPostContainerID} from '@docusaurus/utils-common';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import MDXContent from '@theme/MDXContent';
-import BlogCover from '@site/src/components/BlogCover';
+import {BlogCover} from '@site/src/components/Cover';
 
 export default function BlogPostItemContent({children, className}) {
   const {isBlogPostPage} = useBlogPost();
