@@ -336,9 +336,11 @@ Present exactly this:
   options.
 - **Accents are analogous (blue-neighbor) by default.** Only use a warm contrast accent when the grill
   explicitly set the accent policy to "warm-allowed." **Never use coral under any circumstance.**
-- **Forbid text, letters, numbers, and words** in every prompt, plus real brand logos and faces —
-  Imagen renders these poorly and they break consistency. **Simple flat icons/symbols are allowed** and
-  can strengthen a clean-flat cover.
+- **Forbid text, letters, numbers, and words** in every prompt, plus faces — Imagen renders these
+  poorly and they break consistency. **Avoid brand logos by default**, but allow **one** brand logo
+  when the **agreed concept specifically requires it** for the intended association (e.g. the Tux Linux
+  mascot on a Linux post), rendered as a clean flat icon in the house style — never decoratively, never
+  photoreal. **Simple generic flat icons/symbols are allowed** and can strengthen a clean-flat cover.
 - Never invent a subject that requires readable text or accurate technical diagrams — keep subjects
   abstract or reduced to a clean flat icon.
 - Never regress to a retired look: no grid overlay, no thin glowing blueprint line-art, no single
