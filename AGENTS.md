@@ -129,9 +129,6 @@ in `sidebars.js`.
   `CommentsThread` core reads `useColorMode()` and passes `colorMode` directly as the Giscus
   `theme` prop (`'dark'` or `'light'`).
 
-- **`HomepageFeatures` is unused** — `src/components/HomepageFeatures/` is a legacy scaffold artifact.
-  Do not import it.
-
 - **Firebase hosting** — deploy with `npm run build` then `firebase deploy --only hosting`.
   Project ID: `oops-i-bug-it-again`. This is not GitHub Pages.
 
