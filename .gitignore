@@ -25,3 +25,6 @@ yarn-error.log*
 
 # Firebase
 .firebase/
+
+# AI prompts for images
+tmp-prompts.md

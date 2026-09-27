@@ -191,7 +191,8 @@ field to see which styles recent covers used.
    color treatment and concept interpretation of the *same agreed concept*, so they are real
    alternatives.
 5. Determine the **save path** and **frontmatter snippet** (see Storage).
-6. Output everything (see Output format).
+6. Output everything (see Output format): write the two full prompts to `tmp-prompts.md`, and present
+   the concept receipt, chosen style, save path, and frontmatter in the console.
 
 ## Prompt skeleton
 
@@ -309,15 +310,22 @@ Present exactly this:
 2. The **agreed concept statement** — the locked concept sentence + emphasis notes + accent policy —
    as a visible receipt of what was negotiated. Both options below must honor it.
 3. The **chosen style** and a one-line reason (concept fit, plus any anti-monotony nudge applied).
-4. **Two deliberately divergent options**, each with:
+4. For each of the **two deliberately divergent options**, in the console show only:
     - A short label naming the shared style (clean flat / isometric) and this option's accent.
     - The rationale line (`agreed concept = X → style Y → accent Z, interpretation W`).
-    - The full ready-to-paste prompt.
-    Both options use the same chosen style; they must differ in specific accent and in concept
-    interpretation so they land in visibly different corners of that style.
-5. The **save path** and the **frontmatter snippet** for the detected content type.
-6. A one-line reminder to set 16:9 in the generator, that the image must contain no text, and that
-   after picking a winner the user can run **finalize mode** to record it.
+   Do **not** print the full prompt text in the console. Both options use the same chosen style; they
+   must differ in specific accent and in concept interpretation so they land in visibly different
+   corners of that style.
+5. **Write the full ready-to-paste prompts to `tmp-prompts.md`** at the repository root (this file is
+   git-ignored, so it never enters the repo). **Overwrite** the file on every generate run — it is a
+   disposable scratch file, no history is kept. Write only the two prompt texts, each under a clear
+   `## Option A` / `## Option B` heading, so they can be copied straight into Gemini/Imagen without
+   terminal reflow. Everything else (concept receipt, save path, frontmatter, reminders) stays in the
+   console.
+6. The **save path** and the **frontmatter snippet** for the detected content type.
+7. A one-line note that the prompts were written to `tmp-prompts.md`, plus a one-line reminder to set
+   16:9 in the generator, that the image must contain no text, and that after picking a winner the
+   user can run **finalize mode** to record it.
 
 ## Guardrails
 
