@@ -207,8 +207,10 @@ Blue-dominant palette derived from deep navy (#0b1120), blue (#3b82f6, #60a5fa)
 and pale blue (#dbeafe), with <accent> as a minority accent (~10–25% of the frame).
 <Background treatment>. <Composition / focal hierarchy>. The focal subject is
 <agreed concept depicted as a form fitting the chosen style>.
-Absolutely no text, no letters, no numbers, no words, no labels. No brand logos.
-No faces. Simple flat icons or symbols are allowed. 16:9 aspect ratio.
+Absolutely no text, no letters, no numbers, no words, no labels. Avoid brand logos
+unless the agreed concept specifically requires one for the intended association
+(e.g. the Tux Linux mascot for a Linux post) — then render that one logo as a clean
+flat icon. No faces. Simple flat icons or symbols are allowed. 16:9 aspect ratio.
 ```
 
 Rules for assembly:
@@ -221,8 +223,12 @@ Rules for assembly:
   tones). Never introduce a warm accent unless the policy is "warm-allowed." Never use coral.
 - Commit both prompts to the **same chosen style**; diverge them on color and concept interpretation.
 - Always forbid **text, letters, numbers, and words** explicitly — Imagen renders these poorly and the
-  blog overlays titles separately. **Also forbid real brand/company logos and faces.** Simple flat
-  icons/symbols (e.g. a penguin, a gear, a container) **are allowed** and encouraged where they help.
+  blog overlays titles separately. **Also forbid faces.** **Avoid real brand/company logos by default**,
+  but allow a **single** brand logo when the **agreed concept specifically requires it** to create the
+  intended association (e.g. the Tux Linux mascot on a Linux post) — render that logo as a clean flat
+  icon consistent with the house style, never photoreal. Keep the exception concept-driven and minimal;
+  never add logos decoratively. Simple generic flat icons/symbols (e.g. a penguin, a gear, a container)
+  **are allowed** and encouraged where they help.
 - Never emit a light-mode variant. One blue-dominant image works as a cover on both site themes.
 
 ## Storage
