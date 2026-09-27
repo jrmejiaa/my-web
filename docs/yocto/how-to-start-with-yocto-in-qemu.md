@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 2
 description: "A realistic Yocto setup built on Bootlin layers and QEMU — a better starting point than Poky when you are heading toward a real product."
 tags: [yocto,fundamentals-devtool,qemu,linux]

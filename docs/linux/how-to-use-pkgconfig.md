@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 3
 description: "Stop hand-maintaining compiler and linker flags. Generate a .pc file for your shared library and let pkgconfig do the work."
 tags: [cross-compilation,yocto,user-space,linux]

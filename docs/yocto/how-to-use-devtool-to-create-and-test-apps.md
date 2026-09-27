@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 2
 description: "Create a recipe from scratch, build a library, and wire up a ptest package for unit tests — the devtool basics, end to end."
 tags: [cross-compilation,yocto,linux,fundamentals-devtool,user-space]

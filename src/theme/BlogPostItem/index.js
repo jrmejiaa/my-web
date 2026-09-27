@@ -1,22 +1,19 @@
 import React from 'react';
-import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import BlogPostItem from '@theme-original/BlogPostItem';
-import GiscusComponent from '@site/src/components/GiscusComponent';
-import useIsBrowser from '@docusaurus/useIsBrowser';
+import {BlogComments} from '@site/src/components/Comments';
 
+/**
+ * Swizzled BlogPostItem.
+ *
+ * Renders the stock item, then the blog comments thread. The decision of
+ * whether comments actually appear (post opted in via `enableComments`, and
+ * this is the full post page) lives inside BlogComments, not here.
+ */
 export default function BlogPostItemWrapper(props) {
-  const { metadata, isBlogPostPage } = useBlogPost()
-  const isBrowser = useIsBrowser();
-
-  const { frontMatter, slug, title } = metadata
-  const { enableComments } = frontMatter
-
   return (
     <>
       <BlogPostItem {...props} />
-      {(enableComments && isBlogPostPage) && (
-        <GiscusComponent />
-      )}
+      <BlogComments />
     </>
   );
 }

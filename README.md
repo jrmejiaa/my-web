@@ -61,10 +61,10 @@ Firebase project: `oops-i-bug-it-again` (configured in `.firebaserc`).
 ├── src/
 │   ├── components/
 │   │   ├── TerminalHero/    # Animated typing hero
-│   │   └── GiscusComponent/ # Color-mode-aware Giscus wrapper
+│   │   └── Comments/        # CommentsThread core + BlogComments / DocComments wrappers
 │   ├── css/                 # Design tokens, fonts, global overrides
 │   ├── pages/               # index.js (landing), about.js
-│   └── theme/               # Swizzled BlogPostItem and DocItem/Layout (Giscus injection)
+│   └── theme/               # Swizzled BlogPostItem and DocItem/Layout (comments injection)
 ├── static/                  # Images, favicon, CV PDF
 ├── docusaurus.config.js
 ├── sidebars.js
@@ -94,7 +94,8 @@ Firebase project: `oops-i-bug-it-again` (configured in `.firebaserc`).
 - **Yocto / Linux** — drop a `.md` file into `docs/yocto/` or `docs/linux/`; the sidebar updates automatically.
 - **Coding** — add the file to `docs/coding/` and register it in `sidebars.js` under `codingSidebar`.
 
-Giscus is injected on every doc page automatically — no frontmatter needed.
+Comments are opt-in: set `enableComments: true` in a doc's frontmatter to show a Giscus thread.
+Section `welcome-*` hub pages intentionally omit it.
 
 ## License
 

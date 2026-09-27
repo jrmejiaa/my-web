@@ -1,4 +1,5 @@
 ---
+enableComments: true
 sidebar_position: 1
 ---
 

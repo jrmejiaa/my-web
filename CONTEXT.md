@@ -54,6 +54,13 @@ from a doc: posts are the chronological blog; docs are the reference/tutorial co
 A top-level grouping of docs by subject — `yocto`, `linux`, and `coding`. Used as a concept signal
 for covers and navigation. Not to be confused with a visual "section" of a rendered page.
 
+### Comments
+
+The reader discussion thread shown at the bottom of a post or doc. Comments are opt-in per item and
+symmetric across contexts: an item shows a thread only when its frontmatter sets `enableComments`,
+whether it is a post or a doc. The look and provider are defined once and shared; a page never
+carries its own copy. Section `welcome-*` hub pages intentionally have no comments.
+
 ### House style
 
 The fixed visual identity every cover shares: a blue-dominant palette and one of the sibling
