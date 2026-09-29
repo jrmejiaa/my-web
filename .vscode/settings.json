@@ -1,0 +1,29 @@
+{
+    "cSpell.words": [
+        "bbappend",
+        "bbclass",
+        "bootlin",
+        "Bootlin",
+        "externalsrc",
+        "getvar",
+        "giscus",
+        "Giscus",
+        "Gisqus",
+        "Github",
+        "libmultiply",
+        "Makefiles",
+        "nvim",
+        "NVIM",
+        "packagegroup",
+        "RDEPENDS",
+        "setuptools",
+        "shellcheck",
+        "subparsers",
+        "yapf"
+    ],
+    "editor.rulers": [150],
+    "[markdown]": {
+        "editor.wordWrapColumn": 150,
+        "editor.wordWrap": "wordWrapColumn",
+    }
+}
