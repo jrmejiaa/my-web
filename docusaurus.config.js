@@ -7,7 +7,7 @@ const config = {
   tagline: 'Embedded Software Engineer — Yocto · Linux · C/C++',
   favicon: '/img/blog_favicon.ico',
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://oops-i-bug-it-again.dev/',
   baseUrl: '/',
 
   organizationName: 'jrmejiaa',
@@ -17,7 +17,7 @@ const config = {
 
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
     },
   },
 

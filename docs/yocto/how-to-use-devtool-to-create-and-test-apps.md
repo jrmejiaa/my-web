@@ -211,7 +211,7 @@ RDEPENDS:${PN}-ptest += "${PN}"
 
 By default the `ptest` bbclass put as `RDEPENDS` our own package (which makes total sense). However, in this case we got an error because our default package do not include anything to be installed. This is again a sanity check by the Yocto developers to avoid making 'dummy' mistakes.
 
-Once you have an image and you run for example QEMU as we do for the tutorial [How to start with Yocto without hardware with QEMU](#), you should be able to run the command. 
+Once you have an image and you run for example QEMU as we do for the tutorial [How to start with Yocto without hardware with QEMU](/docs/yocto/how-to-start-with-yocto-in-qemu), you should be able to run the command. 
 
 ```bash
 # inside of QEMU environment

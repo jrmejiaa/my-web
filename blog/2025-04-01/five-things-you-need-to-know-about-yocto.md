@@ -131,4 +131,4 @@ This is the list of things that I wish to know before going on a full-time job w
 
 --- 
 
-Okay this was longer that I expected to be honest, but I just wish to have such ideas before starting with Yocto. Starting on Embedded devices with Yocto as a building tool is a really cool experience and I wish this give you an idea why this tool may seem so complex at the beginning, but afterwards it will just make sense. Thank you for your time, if you want to add something, I would love to see you in the comments!
+Okay this was longer that I expected to be honest, but I just wish to have such ideas before starting with Yocto. Starting on Embedded devices with Yocto as a building tool is a really cool experience and I wish this give you an idea why this tool may seem so complex at the beginning, but afterwards it will just make sense. Once you have these fundamentals down, the next step is learning to troubleshoot when things go wrong — I gathered my hard-won tips in [How to debug recipes in Yocto like a pro](/docs/yocto/how-to-debug-yocto-like-a-pro). Thank you for your time, if you want to add something, I would love to see you in the comments!

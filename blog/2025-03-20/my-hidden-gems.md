@@ -76,7 +76,7 @@ This is a better version of `find`. This tools allow different new features that
 
 ### `delta`
 
-This tool is a pager used by `git` to display the `diff` in a project. Their setup is a little complicated but is well explained in the [README](#) of the project.
+This tool is a pager used by `git` to display the `diff` in a project. Their setup is a little complicated but is well explained in the [README](https://github.com/dandavison/delta) of the project.
 
 ### `fzf`
 
