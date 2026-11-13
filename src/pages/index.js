@@ -20,7 +20,7 @@ const FEATURED_POST_PERMALINKS = [
 
 // Ordered permalinks of the docs to feature. First entry = big featured card.
 const FEATURED_DOC_PERMALINKS = [
-  '/docs/yocto/debugging_yocto',
+  '/docs/yocto/how-to-debug-yocto-like-a-pro',
   '/docs/yocto/how-to-use-devtool-to-create-and-test-apps',
   '/docs/yocto/how-to-create-plugins-for-devtool-in-yocto',
   '/docs/linux/how-to-use-pkgconfig',
