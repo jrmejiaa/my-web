@@ -30,7 +30,7 @@ Once you start doing that, creating multiple products with same image different 
 
 ### `bitbake-getvar` and `oe-depends-dot`
 
-The `bitbake-getvar` is maybe the most useful command for debugging the parsing of `bitbake` that exists. Before the introduction of this command, most people use `bitbake -e` to bring the whole environment of yocto into the standard output and look there for clues of what actually is happening. On the newer versions of Yocto, this is no longer the case. You can use `bitbake-getvar` to get any global or local variable information after parsing. This became extremely useful specially for newbies that are trying to understand who is Yocto parsing certain things and understand the powerful structure behind Yocto's bash and python parsing.
+The `bitbake-getvar` is maybe the most useful command for debugging the parsing of `bitbake` that exists. Before the introduction of this command, most people use `bitbake -e` to bring the whole environment of yocto into the standard output and look there for clues of what actually is happening. On the newer versions of Yocto, this is no longer the case. You can use `bitbake-getvar` to get any global or local variable information after parsing. This became extremely useful specially for newbies that are trying to understand how is Yocto parsing certain things and understand the powerful structure behind Yocto's bash and python parsing.
 
 :::tip
 One thing that I found really useful is that `bitbake-getvar` says exactly where the information is coming from. You can check by yourself in the file or change it as you need.
